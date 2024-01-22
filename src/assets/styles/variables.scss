@@ -1,0 +1,52 @@
+:root {
+    --ion-font-family: 'Avenir LT Pro', sans-serif;
+	--disabled-gray: #EEEEEE;
+
+    /** colors green **/
+    --ion-color-green: #1EEA00;
+	--ion-color-green-rgb: 30,234,0;
+	--ion-color-green-contrast: #004B40;
+	--ion-color-green-contrast-rgb: 0,0,0;
+	--ion-color-green-shade: #1ace00;
+	--ion-color-green-tint: #838383;
+    
+    /** colors green-bold **/
+    --ion-color-greenbold: #004B40;
+	--ion-color-greenbold-rgb: 0,75,64;
+	--ion-color-greenbold-contrast: #ffffff;
+	--ion-color-greenbold-contrast-rgb: 255,255,255;
+	--ion-color-greenbold-shade: #004238;
+	--ion-color-greenbold-tint: #1a5d53;
+
+	/** color grey **/
+	--ion-color-grey: #757575;
+	--ion-color-grey-rgb: 117,117,117;
+	--ion-color-grey-contrast: #ffffff;
+	--ion-color-grey-contrast-rgb: 255,255,255;
+	--ion-color-grey-shade: #676767;
+	--ion-color-grey-tint: #838383;
+
+	/** color light grey **/
+	--ion-color-lightgrey: #AAAAAA;
+	--ion-color-lightgrey-rgb: 170,170,170;
+	--ion-color-lightgrey-contrast: #000000;
+	--ion-color-lightgrey-contrast-rgb: 255,255,255;
+	--ion-color-lightgrey-shade: #969696;
+	--ion-color-lightgrey-tint: #b3b3b3;
+
+	/** color medium grey **/ 
+	--ion-color-mediumgrey: #D3D3D3;
+	--ion-color-mediumgrey-rgb: 211,211,211;
+	--ion-color-mediumgrey-contrast: #000000;
+	--ion-color-mediumgrey-contrast-rgb: 0,0,0;
+	--ion-color-mediumgrey-shade: #bababa;
+	--ion-color-mediumgrey-tint: #d7d7d7;
+
+	/** color black medium **/
+	--ion-color-blackmedium: #323232;
+	--ion-color-blackmedium-rgb: 50,50,50;
+	--ion-color-blackmedium-contrast: #ffffff;
+	--ion-color-blackmedium-contrast-rgb: 255,255,255;
+	--ion-color-blackmedium-shade: #2c2c2c;
+	--ion-color-blackmedium-tint: #474747;
+}

@@ -1,0 +1,19 @@
+<form (submit)="numberMobileModel.valid && send()" class="register-mobile"> 
+  <ion-input
+    class="input-mobile"
+    type="tel"
+    fill="solid"
+    name="numberMobile"
+    placeholder="( X X X - X X X X X X X )"
+    labelPlacement="floating"
+    color="green"
+    [(ngModel)]="numberMobile"
+    [maskito]="phoneMask"
+    [maskitoElement]="maskPredicate"
+    required
+    minlength="14"
+    maxlength="14"
+    errorText="número invalido"
+    #numberMobileModel="ngModel"
+  ></ion-input>
+</form>

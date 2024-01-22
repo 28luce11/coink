@@ -1,0 +1,13 @@
+<div class="logo-text">
+  <ion-img class="logo"
+      [src]="selectedValue.imageUrl"
+      [alt]="selectedValue.alt">
+    </ion-img>
+    <div class="title-text">
+      <div class="title" *ngIf="selectedValue.title">
+        {{ selectedValue.title }}
+      </div>
+      <div class="text" [innerHTML]="selectedValue.subtitle"></div>
+    </div>
+</div>
+<div class="line"></div>

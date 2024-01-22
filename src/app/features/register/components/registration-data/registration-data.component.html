@@ -1,0 +1,145 @@
+<div class="registration-data">
+  <form  
+  [formGroup]="formRegisterUser" 
+  (submit)="sendData(formRegisterUser.value)">
+    <p class="title-data">
+      <b>Documento de identidad</b>
+    </p>
+  
+    <ion-select   
+      class="input-select"
+      color="lightgrey" 
+      interface="popover" 
+      labelPlacement="floating"
+      name="documentType"
+      formControlName="documentType">
+      <div slot="label" class="label-text" >Tipo de documento</div>
+      <ion-select-option *ngFor="let item of this.documentTypes" value="item.notation">{{item.description}}</ion-select-option>
+    </ion-select>
+    
+    <ion-input
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      id="document"
+      label="Número de documento"
+      labelPlacement="floating"
+      errorText="número invalido"
+      name="document"
+      formControlName="document"
+    ></ion-input>
+
+    <ion-input
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      id="documentDatet"
+      type="date"
+      label="Fecha de expedición del documento"
+      labelPlacement="floating"
+      name="documentDate"
+      errorText="fecha invalida"
+      formControlName="documentDate"
+    ></ion-input>
+
+    <ion-input
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      id="birthDate"
+      label="Fecha de nacimiento"
+      type="date"
+      labelPlacement="floating"
+      name="birthDate"
+      errorText="fecha invalida"
+      formControlName="birthDate"
+    ></ion-input>
+
+    <ion-select  
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      interface="popover" 
+      placeholder="" 
+      labelPlacement="floating"
+      name="gender"
+      errorText="campo requerido"
+      formControlName="gender">
+      <div slot="label" class="label-text">Genero</div>
+      <ion-select-option *ngFor="let item of this.genders" value="item.name">{{item.name}}</ion-select-option>
+   
+    </ion-select>
+    
+    <p class="title-data">
+      <b>Configura tu cuenta</b>
+    </p>
+
+    <ion-input
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      id="email"
+      label="Correo electrónico"
+      type="email"
+      labelPlacement="floating"
+      name="email"
+      formControlName="email"
+    ></ion-input>
+
+    <ion-input
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      id="emailConfirm"
+      label="Confirmar correo electrónico"
+      type="email"
+      labelPlacement="floating"
+      [errorText]="(formRegisterUser.controls.emailConfirm.errors | formError:errorMessages.emailConfirm)"
+      name="emailConfirm"
+      formControlName="emailConfirm"
+    ></ion-input>
+
+    <ion-input
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      label="PIN de seguridad" 
+      labelPlacement="floating"
+      errorText="pin incorrecto" 
+      [type]="hideEye ? 'password' : 'text'"
+      maxLength="4"
+      name="pin"
+      formControlName="pin" >
+      <ion-button fill="clear" slot="end" (click)="viewEye()" aria-label="Show/hide">
+        <ion-icon
+          slot="icon-only"
+          color="dark"
+          [name]="hideEye ? 'eye' : 'eye-off-outline'"
+          aria-hidden="true">
+        </ion-icon>
+      </ion-button>
+    </ion-input>
+    
+    <ion-input 
+      class="input-data ion-input-label-lighgrey"
+      color="lightgrey"
+      label="Confirmar PIN de seguridad" 
+      labelPlacement="floating"
+      [errorText]="formRegisterUser.controls.pinConfirm.errors | formError:errorMessages.pinConfirm"
+      [type]="hideEyeConfirm ? 'password' : 'text'"
+      maxLength="4"
+      name="pinConfirm"
+      formControlName="pinConfirm">
+      <ion-button fill="clear" slot="end" (click)="viewEyeConfirm()" aria-label="Show/hide">
+        <ion-icon
+          slot="icon-only"
+          color="dark"
+          [name]="hideEyeConfirm ? 'eye' : 'eye-off-outline'"
+          aria-hidden="true">
+        </ion-icon>
+      </ion-button>
+    </ion-input>
+    <ion-button 
+      class="button-next" 
+      shape="round" 
+      color="green"
+      type="submit"
+      [disabled]="formRegisterUser.invalid"
+    >
+      <span class="text-button">SIGUIENTE</span>
+    </ion-button>
+  </form>
+</div>

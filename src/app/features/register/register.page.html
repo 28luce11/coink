@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="back-button-container">
+      <ion-back-button class="back-button" icon="chevron-back-outline" color="green">
+      </ion-back-button>
+    </ion-buttons>
+    <div class="radio-title">
+      <ion-title class="title-header font-titles">{{ titles[page] }}</ion-title>
+      <div class="radio-buttons">
+        <ion-radio-group [value]="page" (click)="goToStep(1)">
+          <ion-radio class="radio" color="green" [value]="values.one"></ion-radio>
+        </ion-radio-group>
+        <div class="line"></div>
+        <ion-radio-group [value]="page"  (click)="goToStep(2)">
+          <ion-radio class="radio" color="green" [value]="values.two"></ion-radio>
+        </ion-radio-group>
+        <div class="line"></div>
+        <ion-radio-group [value]="page" (click)="goToStep(3)">
+          <ion-radio class="radio" color="green" [value]="values.three"></ion-radio>
+        </ion-radio-group>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container-pages">
+    <app-view-text [viewText]="page"></app-view-text>
+    <ng-container [ngSwitch]="page" >
+      <app-registration-mobile *ngSwitchCase="1" (sendPag)="getDataFromStep($event, 2)"></app-registration-mobile>
+      <app-registration-data *ngSwitchCase="2"
+        [documentTypes]="documentTypes"
+        [genders]="genders"
+        (sendPag)="getDataFromStep($event, 3)">
+      </app-registration-data>
+      <app-contract *ngSwitchCase="3" (sendPag)="getDataFromStep($event)"></app-contract>
+    </ng-container>
+  </div>
+</ion-content>
+
+<ion-modal class="modal-finish" [canDismiss]="false">
+  <ng-template>
+    <div class="wrapper">
+      <ion-img class="image-gift"
+        src="/assets/images/gift.svg"
+        alt="Logo Coink"
+      ></ion-img>
+      <p class="title-data modal">
+        <b>¡Bienvenido a Coink!</b>
+      </p>
+      <p class="text-modal">
+        ¡Cuenta creada exitosamente, <br>
+        tu marrano ya está listo para <br>
+        que empieces a ahorrar!
+      </p>
+      <ion-button class="button-next modal-button" shape="round" color="green" (click)="closeModal()">
+        <span class="text-button" >continuar</span>
+      </ion-button>
+    </div>
+  </ng-template>
+</ion-modal>

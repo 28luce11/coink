@@ -1,0 +1,32 @@
+.logo-text {
+    display: flex;
+    font-size: 16px;
+    color: var(--ion-color-grey);
+    padding-top: 35px;
+    padding-bottom: 34.5px;
+    
+    .logo {
+        width: 72px;
+        margin-right: 24px;
+    }
+
+    .title-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+
+        .title {
+            color: var(--ion-color-greenbold);
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--ion-color-green);
+    margin-bottom: 34.5px;
+}
